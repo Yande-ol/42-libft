@@ -22,3 +22,36 @@ The library is split into three parts:
 ```bash
 make
 ```
+Creates `libft.a` 
+
+🔹 Add the bonus linked list functions:
+```bash
+make bonus
+```
+🔹 Clean up the mess:
+```bash
+make clean : remove object files
+make fclean : remove object files and libft.a
+```
+
+---
+
+## How to use
+Include the header file:
+```c
+#include "libft.h"
+```
+Compile your program with Libft:
+```bash
+gcc main.c -L. -lft -I. -o myprogram
+```
+
+---
+
+## Why Libft Matters
+1. Foces you to understand C inside-out(memory, pointers, allocation)
+2. gives you a realiable toolbox you will use in every future projects
+3. Trains you to write clean, reusable, and efficient code
+
+
+
