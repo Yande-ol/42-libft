@@ -13,7 +13,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <unistd.h>  
+# include <unistd.h> 
+# include <stddef.h> 
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
