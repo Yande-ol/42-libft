@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-04 02:14:29 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025-10-04 02:14:29 by Yande-ol         ###   ########.fr       */
-/*                                                                            */
+/*																									 */
+/*																		  :::		::::::::	*/
+/*	main.c															:+:		:+:	 :+:	*/
+/*																	 +:+ +:+			+:+	  */
+/*	By: Yande-ol <Yande-ol@student.42.fr>			 #+#  +:+		 +#+		  */
+/*																+#+#+#+#+#+	+#+			  */
+/*	Created: 2025-10-04 02:14:29 by Yande-ol			 #+#	 #+#				 */
+/*	Updated: 2025-10-04 02:14:29 by Yande-ol			###	########.fr		 */
+/*																									 */
 /* ************************************************************************** */
 
 #include <stdlib.h>
@@ -38,37 +38,37 @@ void *ft_calloc(size_t count, size_t size);
 
 int main(void)
 {
-    char c1 = 'A';
-    char c2 = 'z';
-    char c3 = '5';
-    char c4 = '@';
-    char c5 = ' ';
-    char c6 = 127;
-    char c7 = 31;
+	char c1 = 'A';
+	char c2 = 'z';
+	char c3 = '5';
+	char c4 = '@';
+	char c5 = ' ';
+	char c6 = 127;
+	char c7 = 31;
 
-    printf("ft_isalpha('%c') = %d\n", c1, ft_isalpha(c1));
-    printf("ft_isalpha('%c') = %d\n", c2, ft_isalpha(c2));
-    printf("ft_isalnum('%c') = %d\n", c3, ft_isalnum(c3));
-    printf("ft_isalnum('%c') = %d\n", c4, ft_isalnum(c4));
-    printf("ft_isascii('%c') = %d\n", c4, ft_isascii(c4));
-    printf("ft_isascii('%c') = %d\n", c6, ft_isascii(c6));
-    printf("ft_isprint('%c') = %d\n", c5, ft_isprint(c5));
-    printf("ft_isprint('%c') = %d\n", c7, ft_isprint(c7));
-    printf("ft_isdigit('%c') = %d\n", c3, ft_isdigit(c3));
-    printf("ft_isdigit('%c') = %d\n", c1, ft_isdigit(c1));
-    printf("ft_strlen('Hello, World!') = %zu\n", ft_strlen("Hello, World!"));
-    printf("ft_strlcpy test:\n");
-    char dest[20];
-    const char *src = "Hello, World!";
-    size_t result = ft_strlcpy(dest, src, sizeof(dest));
-    printf("Source: %s\n", src);
-    printf("Destination: %s\n", dest);
-    printf("Returned length: %zu\n", result);
-    printf("ft_strncmp('Hello', 'Hello, World!', 5) = %d\n", ft_strncmp("Hello", "Hello, World!", 5));
-    printf("ft_strchr('Hello, 'o') = %s\n", ft_strchr("Hello", 'o'));
-    printf("ft_strrchr('Hello, 'l') = %s\n", ft_strrchr("Hello", 'l'));
-    printf("ft_strdup('Hello, World!') = %s\n", ft_strdup("Hello, World!"));
-    printf("ft_strnstr('Hello, World!', 'World', 13) = %s\n", ft_strnstr("Hello, World!", "World", 13));
+	printf("ft_isalpha('%c') = %d\n", c1, ft_isalpha(c1));
+	printf("ft_isalpha('%c') = %d\n", c2, ft_isalpha(c2));
+	printf("ft_isalnum('%c') = %d\n", c3, ft_isalnum(c3));
+	printf("ft_isalnum('%c') = %d\n", c4, ft_isalnum(c4));
+	printf("ft_isascii('%c') = %d\n", c4, ft_isascii(c4));
+	printf("ft_isascii('%c') = %d\n", c6, ft_isascii(c6));
+	printf("ft_isprint('%c') = %d\n", c5, ft_isprint(c5));
+	printf("ft_isprint('%c') = %d\n", c7, ft_isprint(c7));
+	printf("ft_isdigit('%c') = %d\n", c3, ft_isdigit(c3));
+	printf("ft_isdigit('%c') = %d\n", c1, ft_isdigit(c1));
+	rintf("ft_strlen('Hello, World!') = %zu\n", ft_strlen("Hello, World!"));
+	printf("ft_strlcpy test:\n");
+	char dest[20];
+	const char *src = "Hello, World!";
+	size_t result = ft_strlcpy(dest, src, sizeof(dest));
+	printf("Source: %s\n", src);
+	printf("Destination: %s\n", dest);
+	printf("Returned length: %zu\n", result);
+	printf("ft_strncmp('Hello', 'Hello, World!', 5) = %d\n", ft_strncmp("Hello", "Hello, World!", 5));
+	printf("ft_strchr('Hello, 'o') = %s\n", ft_strchr("Hello", 'o'));
+	printf("ft_strrchr('Hello, 'l') = %s\n", ft_strrchr("Hello", 'l'));
+	printf("ft_strdup('Hello, World!') = %s\n", ft_strdup("Hello, World!"));
+	printf("ft_strnstr('Hello, World!', 'World', 13) = %s\n", ft_strnstr("Hello, World!", "World", 13));
 	printf("ft_memset test:\n");
 	char buffer[20] = "Hello, World!";
 	printf("Before ft_memset: %s\n", buffer);
@@ -108,7 +108,7 @@ int main(void)
 	printf("ft_toupper('%c') = '%c'\n", 'Z', ft_toupper('Z'));
 	printf("tolower('%c') = '%c'\n", 'A', ft_tolower('A'));
 	printf("tolower('%c') = '%c'\n", 'z', ft_tolower('z'));
-	printf("ft_atoi('   -12345abc') = %d\n", ft_atoi("   -12345abc"));
+	printf("ft_atoi('	-12345abc') = %d\n", ft_atoi("	-12345abc"));
 	printf("ft_calloc(5, sizeof(int)) test:\n");
 	int *arr = (int *)ft_calloc(5, sizeof(int));
 	if (arr)
@@ -118,5 +118,5 @@ int main(void)
 		free(arr);
 	}
 
-    return 0;
+	 return 0;
 }
