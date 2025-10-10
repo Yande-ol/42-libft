@@ -49,9 +49,9 @@ gcc main.c -L. -lft -I. -o myprogram
 ---
 
 ## Why Libft Matters
-1. Foces you to understand C inside-out(memory, pointers, allocation)
-2. gives you a realiable toolbox you will use in every future projects
-3. Trains you to write clean, reusable, and efficient code
+1. Foces you to understand C inside-out(memory, pointers, allocation).
+2. gives you a realiable toolbox you will use in every future projects.
+3. Trains you to write clean, reusable, and efficient code.
 
 
 
