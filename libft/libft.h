@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: yande-ol <yande-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-04 02:05:09 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025-10-04 02:05:09 by Yande-ol         ###   ########.fr       */
+/*   Created: 2025/10/04 02:05:09 by Yande-ol          #+#    #+#             */
+/*   Updated: 2025/10/10 17:30:23 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h> 
 # include <stddef.h> 
+# include <stdint.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

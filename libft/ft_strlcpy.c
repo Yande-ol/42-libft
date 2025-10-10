@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: yande-ol <yande-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-04 17:05:19 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025-10-04 17:05:19 by Yande-ol         ###   ########.fr       */
+/*   Created: 2025/10/04 17:05:19 by Yande-ol          #+#    #+#             */
+/*   Updated: 2025/10/10 17:31:11 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (dstsize > 0)
 	{
-	while (src[i] != '\0' && i < (dstsize - 1))
+		while (src[i] != '\0' && i < (dstsize - 1))
 		{
 			dst[i] = src[i];
 			i++;
