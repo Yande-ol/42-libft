@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: yande-ol <yande-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-05 21:09:35 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025-10-05 21:09:35 by Yande-ol         ###   ########.fr       */
+/*   Created: 2025/10/05 21:09:35 by Yande-ol          #+#    #+#             */
+/*   Updated: 2025/10/13 18:42:46 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*c;
-	char	*d;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	if (!n)
-		return (dest);
-	if (!src && !dest)
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	if (!dest && !src)
 		return (NULL);
-	i = -1;
-	c = (char *)src;
-	d = (char *)dest;
-	if (dest <= src)
+	if (d < s)
 	{
-		while (++i < n)
-			d[i] = c[i];
-		return (dest);
+		while (n--)
+			*d++ = *s++;
 	}
-	i = n;
-	while (i > 0)
+	else
 	{
-		d[i - 1] = c[i - 1];
-		i--;
+		d += n;
+		s += n;
+		while (n--)
+			*--d = *--s;
 	}
 	return (dest);
 }
