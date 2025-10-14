@@ -6,7 +6,7 @@
 /*   By: yande-ol <yande-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 02:05:09 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025/10/10 17:30:23 by yande-ol         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:39:36 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(const char *s1, const char *set);
 
 #endif

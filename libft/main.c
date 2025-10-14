@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																									 */
-/*																		  :::		::::::::	*/
-/*	main.c															:+:		:+:	 :+:	*/
-/*																	 +:+ +:+			+:+	  */
-/*	By: Yande-ol <Yande-ol@student.42.fr>			 #+#  +:+		 +#+		  */
-/*																+#+#+#+#+#+	+#+			  */
-/*	Created: 2025-10-04 02:14:29 by Yande-ol			 #+#	 #+#				 */
-/*	Updated: 2025-10-04 02:14:29 by Yande-ol			###	########.fr		 */
-/*																									 */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yande-ol <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/14 14:50:13 by yande-ol          #+#    #+#             */
+/*   Updated: 2025/10/14 16:53:21 by yande-ol         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
@@ -35,6 +35,9 @@ int ft_toupper(int c);
 int ft_atoi(const char *str);
 int ft_tolower(int c);
 void *ft_calloc(size_t count, size_t size);
+char *ft_substr(char const *s, unsigned int star, size_t n);
+char *ft_strjoin(const char *s1, const char *s2);
+char *ft_strtrim(char const *s1, const char *set);
 
 int main(void)
 {
@@ -56,7 +59,7 @@ int main(void)
 	printf("ft_isprint('%c') = %d\n", c7, ft_isprint(c7));
 	printf("ft_isdigit('%c') = %d\n", c3, ft_isdigit(c3));
 	printf("ft_isdigit('%c') = %d\n", c1, ft_isdigit(c1));
-	rintf("ft_strlen('Hello, World!') = %zu\n", ft_strlen("Hello, World!"));
+	printf("ft_strlen('Hello, World!') = %zu\n", ft_strlen("Hello, World!"));
 	printf("ft_strlcpy test:\n");
 	char dest[20];
 	const char *src = "Hello, World!";
@@ -117,6 +120,33 @@ int main(void)
 			printf("arr[%d] = %d\n", i, arr[i]);
 		free(arr);
 	}
+	printf("ft_substr test\n");
+	char s[] = "MATHEUS";
+	char *nov;
 
-	 return 0;
+	printf("string origin: %s\n", s);
+
+	nov = ft_substr(s, 6, 3);
+
+	printf("string dest: %s\n", nov);
+
+	free(nov);
+	printf("ft_strjoin test:\n");
+	char s1[] = "Yan";
+	char s2[] = "Matos";
+	char *nova = ft_strjoin(s1, s2);
+
+
+	printf("depois da juncao: %s\n", nova);
+
+	free(nova);
+	printf("ft_strtrim test: \n");
+	char test[] = "---yanmatos+++";
+	char *recb;
+
+	recb = ft_strtrim(test, "-+");
+	printf("Somente os caracteres que queremos: %s\n", recb);
+
+	free(recb);
+		return 0;
 }
