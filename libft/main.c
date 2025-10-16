@@ -38,6 +38,7 @@ void *ft_calloc(size_t count, size_t size);
 char *ft_substr(char const *s, unsigned int star, size_t n);
 char *ft_strjoin(const char *s1, const char *s2);
 char *ft_strtrim(char const *s1, const char *set);
+char **ft_split(char const *s, char c);
 
 int main(void)
 {
@@ -148,5 +149,24 @@ int main(void)
 	printf("Somente os caracteres que queremos: %s\n", recb);
 
 	free(recb);
+	printf("ft_split teste :\n");
+	char str[] = "Vamos--com--essa--merda";
+        char **sdl;
+        size_t i;
+
+        printf("String orin sem separação: %s\n", str);
+
+        sdl = ft_split(str,  '-');
+
+        printf("Strig separada em palavras:\n");
+
+        i = 0;
+        while (sdl[i])
+        {
+                printf("%s\n", sdl[i]);
+		i++;
+        }
+
+	
 		return 0;
 }
