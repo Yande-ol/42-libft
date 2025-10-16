@@ -6,7 +6,7 @@
 /*   By: yande-ol <yande-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 02:05:09 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025/10/14 16:39:36 by yande-ol         ###   ########.fr       */
+/*   Updated: 2025/10/16 12:36:08 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

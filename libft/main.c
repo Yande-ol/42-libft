@@ -6,13 +6,18 @@
 /*   By: yande-ol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:50:13 by yande-ol          #+#    #+#             */
-/*   Updated: 2025/10/14 16:53:21 by yande-ol         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:09:13 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
+char	meu_rev(unsigned int i, char c)
+{
+	(void)i;
+	return c + 32;
+}
 int ft_isalpha(int c);
 int ft_isalnum(int c);
 int ft_isascii(int c);
@@ -39,6 +44,8 @@ char *ft_substr(char const *s, unsigned int star, size_t n);
 char *ft_strjoin(const char *s1, const char *s2);
 char *ft_strtrim(char const *s1, const char *set);
 char **ft_split(char const *s, char c);
+char *ft_itoa(int n);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 int main(void)
 {
@@ -73,34 +80,34 @@ int main(void)
 	printf("ft_strrchr('Hello, 'l') = %s\n", ft_strrchr("Hello", 'l'));
 	printf("ft_strdup('Hello, World!') = %s\n", ft_strdup("Hello, World!"));
 	printf("ft_strnstr('Hello, World!', 'World', 13) = %s\n", ft_strnstr("Hello, World!", "World", 13));
-	printf("ft_memset test:\n");
+	printf("FT_MEMSET TESTE:\n");
 	char buffer[20] = "Hello, World!";
 	printf("Before ft_memset: %s\n", buffer);
 	ft_memset(buffer + 7, 'X', 5);
 	printf("After ft_memset: %s\n", buffer);
-	printf("ft_bzero test:\n");
+	printf("FT_BZERO TESTE:\n");
 	char buffer2[20] = "Hello, World!";
 	printf("Before ft_bzero: %s\n", buffer2);
-	ft_bzero(buffer2 + 7, 5);
+	ft_bzero(buffer2 + 8, 8);
 	printf("After ft_bzero: %s\n", buffer2);
-	printf("ft_memcpy test:\n");
+	printf("FT_MEMCPY TESTE:\n");
 	char dest2[20];
 	const char *src2 = "Hello, World!";
 	printf("Source: %s\n", src2);
 	ft_memcpy(dest2, src2, 13);
 	dest2[13] = '\0'; 
 	printf("Destination after ft_memcpy: %s\n", dest2);
-	printf("ft_memmove test:\n");
+	printf("FT_MEMMOVE TESTE:\n");
 	char overlap[] = "1234567890";
 	printf("Before ft_memmove: %s\n", overlap);
 	ft_memmove(overlap + 4, overlap, 6);
 	printf("After ft_memmove: %s\n", overlap);
-	printf("ft_memcmp test:\n");
+	printf("FT_MEMCMP TESTE:\n");
 	const char *buf1 = "Hello, World!";
 	const char *buf2 = "Hello, World?";
 	int cmp_result = ft_memcmp(buf1, buf2, 13);
 	printf("ft_memcmp result: %d\n", cmp_result);
-	printf("ft_memchr test:\n");
+	printf("FT_MEMCHR TESTE:\n");
 	const char *buf3 = "Hello, World!";
 	char ch = 'W';
 	char *memchr_result = ft_memchr(buf3, ch, 13);
@@ -108,12 +115,12 @@ int main(void)
 		printf("ft_memchr found '%c' at position: %ld\n", ch, memchr_result - buf3);
 	else
 		printf("ft_memchr did not find '%c'\n", ch);
-	printf("ft_toupper('%c') = '%c'\n", 'a', ft_toupper('a'));
-	printf("ft_toupper('%c') = '%c'\n", 'Z', ft_toupper('Z'));
-	printf("tolower('%c') = '%c'\n", 'A', ft_tolower('A'));
-	printf("tolower('%c') = '%c'\n", 'z', ft_tolower('z'));
-	printf("ft_atoi('	-12345abc') = %d\n", ft_atoi("	-12345abc"));
-	printf("ft_calloc(5, sizeof(int)) test:\n");
+	printf("FT_TOUPPER('%c') = '%c'\n", 'a', ft_toupper('a'));
+	printf("FT_TOUPPER('%c') = '%c'\n", 'Z', ft_toupper('Z'));
+	printf("FT_TOLOWER('%c') = '%c'\n", 'A', ft_tolower('A'));
+	printf("FT_TOLOWER('%c') = '%c'\n", 'z', ft_tolower('z'));
+	printf("FT_ATOI('	-12345abc') = %d\n", ft_atoi("	-12345abc"));
+	printf("FT_CALLOC(5, sizeof(int)) test:\n");
 	int *arr = (int *)ft_calloc(5, sizeof(int));
 	if (arr)
 	{
@@ -121,7 +128,7 @@ int main(void)
 			printf("arr[%d] = %d\n", i, arr[i]);
 		free(arr);
 	}
-	printf("ft_substr test\n");
+	printf("FT_SUBSTR TESTE\n");
 	char s[] = "MATHEUS";
 	char *nov;
 
@@ -132,7 +139,7 @@ int main(void)
 	printf("string dest: %s\n", nov);
 
 	free(nov);
-	printf("ft_strjoin test:\n");
+	printf("FT_STRJOIN TESTE:\n");
 	char s1[] = "Yan";
 	char s2[] = "Matos";
 	char *nova = ft_strjoin(s1, s2);
@@ -141,7 +148,7 @@ int main(void)
 	printf("depois da juncao: %s\n", nova);
 
 	free(nova);
-	printf("ft_strtrim test: \n");
+	printf("FT_STRTRIM TESTE: \n");
 	char test[] = "---yanmatos+++";
 	char *recb;
 
@@ -149,7 +156,7 @@ int main(void)
 	printf("Somente os caracteres que queremos: %s\n", recb);
 
 	free(recb);
-	printf("ft_split teste :\n");
+	printf("FT_SPLIT TESTE:\n");
 	char str[] = "Vamos--com--essa--merda";
         char **sdl;
         size_t i;
@@ -166,7 +173,25 @@ int main(void)
                 printf("%s\n", sdl[i]);
 		i++;
         }
+	printf("FT_ITOA TESTE:\n");
+	int n = -120;
+	char *ptr;
 
-	
+	printf("Mostrando o int escolhido: %d\n", n);
+
+	ptr = ft_itoa(n);
+
+	printf("Mostrando o int mudado para char(string): %s\n", ptr);
+	printf("FT_STRMAPI TESTE:\n");
+	char str22[] = "ABC";
+	char *su;
+
+	printf("String orig antes de passar a funcao: %s\n", str22);
+
+	su = ft_strmapi(str22, meu_rev);
+
+	printf("String depois que foi passada a funcao: %s\n", su);
+
+
 		return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: yande-ol <yande-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-15 15:42:25 by Yande-ol          #+#    #+#             */
-/*   Updated: 2025-10-15 15:42:25 by Yande-ol         ###   ########.fr       */
+/*   Created: 2025/10/15 15:42:25 by Yande-ol          #+#    #+#             */
+/*   Updated: 2025/10/16 11:31:09 by yande-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,7 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		if (*s == '\0')
-		{
-			break;
-		}
+			break ;
 		word_start = (char *)s;
 		while (*s && *s != c)
 			s++;
