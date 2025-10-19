@@ -1,17 +1,23 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yande-ol <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:50:13 by yande-ol          #+#    #+#             */
-/*   Updated: 2025/10/16 18:09:13 by yande-ol         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   main.c											 :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: yande-ol <marvin@42.fr>					+#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2025/10/14 14:50:13 by yande-ol		  #+#	#+#			 */
+/*   Updated: 2025/10/16 18:09:13 by yande-ol		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+
+void ft_upcase_even(unsigned int i, char *c)
+{
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+}
 
 char	meu_rev(unsigned int i, char c)
 {
@@ -35,7 +41,6 @@ void ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *dst, const void *src, size_t n);
 void *ft_memmove(void *dst, const void *src, size_t len);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
-void *ft_memchr(const void *s, int c, size_t n);
 int ft_toupper(int c);
 int ft_atoi(const char *str);
 int ft_tolower(int c);
@@ -46,6 +51,12 @@ char *ft_strtrim(char const *s1, const char *set);
 char **ft_split(char const *s, char c);
 char *ft_itoa(int n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int, char *));
+void *ft_memchr(const void *s, int c, size_t n);
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 int main(void)
 {
@@ -107,14 +118,6 @@ int main(void)
 	const char *buf2 = "Hello, World?";
 	int cmp_result = ft_memcmp(buf1, buf2, 13);
 	printf("ft_memcmp result: %d\n", cmp_result);
-	printf("FT_MEMCHR TESTE:\n");
-	const char *buf3 = "Hello, World!";
-	char ch = 'W';
-	char *memchr_result = ft_memchr(buf3, ch, 13);
-	if (memchr_result)
-		printf("ft_memchr found '%c' at position: %ld\n", ch, memchr_result - buf3);
-	else
-		printf("ft_memchr did not find '%c'\n", ch);
 	printf("FT_TOUPPER('%c') = '%c'\n", 'a', ft_toupper('a'));
 	printf("FT_TOUPPER('%c') = '%c'\n", 'Z', ft_toupper('Z'));
 	printf("FT_TOLOWER('%c') = '%c'\n", 'A', ft_tolower('A'));
@@ -158,21 +161,21 @@ int main(void)
 	free(recb);
 	printf("FT_SPLIT TESTE:\n");
 	char str[] = "Vamos--com--essa--merda";
-        char **sdl;
-        size_t i;
+		char **sdl;
+		size_t i;
 
-        printf("String orin sem separação: %s\n", str);
+		printf("String orin sem separação: %s\n", str);
 
-        sdl = ft_split(str,  '-');
+		sdl = ft_split(str,  '-');
 
-        printf("Strig separada em palavras:\n");
+		printf("Strig separada em palavras:\n");
 
-        i = 0;
-        while (sdl[i])
-        {
-                printf("%s\n", sdl[i]);
+		i = 0;
+		while (sdl[i])
+		{
+				printf("%s\n", sdl[i]);
 		i++;
-        }
+		}
 	printf("FT_ITOA TESTE:\n");
 	int n = -120;
 	char *ptr;
@@ -191,6 +194,49 @@ int main(void)
 	su = ft_strmapi(str22, meu_rev);
 
 	printf("String depois que foi passada a funcao: %s\n", su);
+	printf("FT_STRITERI TESTE: \n");
+	char str23[] = "yanmatos";
+	printf("String antes da funcao passar: %s\n", str23);
+	
+	ft_striteri(str23, ft_upcase_even);
+
+	printf("String depois da funcao passar:  %s\n", str23);
+	printf("FT_MEMCHR TESTE:\n");
+	char data[] = "Yan Matos";
+	char *resul;
+	
+	printf("String passada: %s\n", data);
+	resul = ft_memchr(data, 'M', 9);
+
+	if (resul != NULL)
+		printf("Encontrado: %s\n", resul);
+	else
+		printf("Caracter não encontrado!\n");
+
+	printf("FT_PUTCHAR_FD TESTE: \n");
+	ft_putchar_fd ('y', 1);
+	ft_putchar_fd ('a', 1);
+	ft_putchar_fd ('n', 1);
+	ft_putchar_fd ('\n', 1);
+	printf("FT_PUTSTR_FD TESTE:\n");
+	ft_putstr_fd ("eu sou o yan", 1);
+	ft_putchar_fd ('\n', 1);
+	ft_putstr_fd ("estou na 42", 1);
+	ft_putchar_fd ('\n', 1);
+	printf("FT_PUTENDL_FD TESTE:\n");
+	ft_putendl_fd("yan", 1);
+	ft_putendl_fd("matos", 1);
+	ft_putendl_fd("carlos", 1);
+	ft_putendl_fd("oi", 1);
+	printf("FT_PUTNBR_FD TESTE: \n");
+	ft_putnbr_fd(42, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-12345, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
 
 
 		return 0;
