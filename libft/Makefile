@@ -4,7 +4,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
-TEST_DIR = tests
+INCLUDE = -I.
 
 SRCS = ${PART01} ${PART02}
 
@@ -18,7 +18,10 @@ PART02 = ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c\
 	 ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	 ft_putnbr_fd.c
 
-OBJS = $(SRCS:.c=.o)
+BONUS = ft_lstnew.c ft_lstadd_front.c
+
+OBJS = ${SRCS:.c=.o}
+BONUS_OBJS = ${BONUS:.c=.o}
 
 all: $(NAME)
 
@@ -26,10 +29,12 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
+bonus: $(BONUS_OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS)
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
