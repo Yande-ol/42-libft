@@ -18,7 +18,7 @@ PART02 = ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c\
 	 ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	 ft_putnbr_fd.c
 
-BONUS = ft_lstnew.c ft_lstadd_front.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
 
 OBJS = ${SRCS:.c=.o}
 BONUS_OBJS = ${BONUS:.c=.o}
@@ -39,6 +39,11 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
+fclean_bonus:
+	$(RM) $(BONUS_OBJS) $(NAME) 
+
 re: fclean all
 
-.PHONY: all clean fclean re run_tests
+re_bonus: fclean_bonus bonus
+
+.PHONY: all clean fclean re fclean_bonus

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Yande-ol <Yande-ol@student.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 12:30:25 by Yande-ol          #+#    #+#             */
 /*   Updated: 2025/10/20 16:43:35 by Yande-ol         ###   ########.fr       */

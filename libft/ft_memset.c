@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yande-ol <Yande-ol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: Yande-ol <Yande-ol@student.42porto.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-10-05 20:56:56 by Yande-ol          #+#    #+#             */
 /*   Updated: 2025-10-05 20:56:56 by Yande-ol         ###   ########.fr       */

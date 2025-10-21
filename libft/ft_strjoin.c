@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yande-ol <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yande-ol <Yande-ol@student.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:31:36 by yande-ol          #+#    #+#             */
 /*   Updated: 2025/10/14 15:09:31 by yande-ol         ###   ########.fr       */
