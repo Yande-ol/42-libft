@@ -32,19 +32,17 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-bonus: $(BONUS_OBJS)
+bonus: bonus_done
+
+bonus_done: $(BONUS_OBJS)
 	$(AR) $(NAME) $(BONUS_OBJS)
+	@touch bonus_done
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS) bonus_done
 
 fclean: clean
 	$(RM) $(NAME)
 
-fclean_bonus:
-	$(RM) $(BONUS_OBJS) $(NAME) 
-
 re: fclean all
 
-re_bonus: fclean_bonus bonus
-
-.PHONY: all clean fclean re fclean_bonus
+.PHONY: all clean fclean re 
